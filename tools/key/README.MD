@@ -1,6 +1,6 @@
 # Key Management System
 
-This project provides a key management system using MongoDB for generating and retrieving serial keys. It includes two main classes:
+This System provides a key management system using MongoDB for generating and retrieving serial keys. It includes two main classes:
 
 * KeyGenerator: Generates and stores SHA-256 hashed keys in a MongoDB collection.
 * KeyRetriever: Retrieves random keys from a MongoDB collection.
@@ -12,9 +12,9 @@ This project provides a key management system using MongoDB for generating and r
 * Hashes keys using SHA-256.
 * Stores generated keys in a MongoDB collection.
 ### Key Retrieval:
-Retrieves a specified number of random keys from a MongoDB collection.
-Supports key retrieval by specifying the key list name.
-Provides output options for displaying the retrieved keys.
+* Retrieves a specified number of random keys from a MongoDB collection.
+* Supports key retrieval by specifying the key list name.
+* Provides output options for displaying the retrieved keys.
 ## Usage
 
 ### 1. Key Generation
@@ -26,7 +26,7 @@ The `KeyGenerator` class handles generating and storing keys. Use the following 
 from key_generator import KeyGenerator
 
 # Initialize KeyGenerator with MongoDB configuration
-key_gen = KeyGenerator(uri='YOUR_MONGO_URI', database='YOUR_DATABASE', collection='YOUR_COLLECTION', key_list='YOUR_KEY_LIST')
+key_gen = KeyGenerator(uri='MONGO_URI', database='DATABASE', collection='COLLECTION', key_list='KEY_LIST')
 
 # Generate keys
 key_gen.generate_keys(amount=10, hash=None, key_list_name='MyKeyList')
@@ -46,7 +46,7 @@ The `KeyRetriever` class retrieves random keys from the MongoDB collection. Use 
 from key_retriever import KeyRetriever
 
 # Initialize KeyRetriever with MongoDB configuration
-key_retriever = KeyRetriever(uri='YOUR_MONGO_URI', database='YOUR_DATABASE', collection='YOUR_COLLECTION', key_list='YOUR_KEY_LIST')
+key_retriever = KeyRetriever(uri='MONGO_URI', database='DATABASE', collection='COLLECTION', key_list='KEY_LIST')
 
 # Retrieve random keys
 keys = key_retriever.retrieve_random_key(number_of_keys=5, key_list_name='MyKeyList', output=True)
@@ -58,7 +58,7 @@ keys = key_retriever.retrieve_random_key(number_of_keys=5, key_list_name='MyKeyL
 `output`: Boolean flag to print the retrieved keys.
 ## Configuration
 
-Ensure you set up your environment variables or provide them directly in the code:
+set up your environment variables or provide them directly in the code:
 
 `MONGO_URI`: MongoDB connection URI.
 `MONGO_DATABASE`: Name of the MongoDB database.
@@ -72,3 +72,10 @@ Ensure you set up your environment variables or provide them directly in the cod
 #### Why Use This System:
 * Provides a scalable and secure way to manage and store keys.
 * Easy integration with MongoDB for persistent storage and retrieval.
+
+
+# Warning
+Please do not mix multiple different `key_list_name` in the same collection, this would cause this error to appear:
+```cmd
+Retrieved {x} improper keys, please do not mix a collection with multiple key list names.
+```

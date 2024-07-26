@@ -1,5 +1,5 @@
-from tools.key.key_generator import KeyManager
-from tools.key.key_retriever import KeyRetriever
+from key_generator import KeyManager
+from key_retriever import KeyRetriever
 
 def main():
     # Example usage of KeyManager to generate keys
@@ -12,7 +12,7 @@ def main():
 
     # Generating keys with custom parameters
     print("\nGenerating keys with custom parameters...")
-    key_manager.gen(hash="CUSTOM_HASH", keyNameList="CustomKeyList", amt=5)
+    key_manager.gen(hash="CUSTOM_HASH", keyNameList="program-serial-keys", amt=5)
 
     # Example usage of KeyRetriever to retrieve random keys
     print("\n=== Key Retriever ===")
@@ -24,7 +24,7 @@ def main():
 
     # Retrieving multiple random keys
     print("\nRetrieving multiple random keys...")
-    key_retriever.retrieve_random_key(number_of_keys=3, output=True, keyListName="CustomKeyList")
+    key_retriever.retrieve_random_key(number_of_keys=3, output=True, key_list_name="CustomKeyList")
 
 if __name__ == "__main__":
     main()
