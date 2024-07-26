@@ -2,7 +2,7 @@ import socket
 import requests
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-from tools.enviroment import *
+from tools.key.enviroment import *
 
 
 #@# -----------------------------------Database Functions----------------------------------- #@#
@@ -60,7 +60,7 @@ def license():
         serial = input("Serial key: ")
         collection = initialize_keys_collection()
         
-        if collection.find_one({"program-serial-keys": serial}):
+        if collection.find_one({MongoKeyList: serial}):
             return_collection(serial)
             return True
         return False
