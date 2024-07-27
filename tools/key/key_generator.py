@@ -81,16 +81,16 @@ class KeyManager:
                 print("Failed to generate keys.")
             exit()
 
-    def gen(self, hash='default', keyNameList='default', amt="ask", output=True):
+    def gen(self, hash='default', key_name_list='default', amt="ask", output=True):
         # Default values for hash, keyNameList, and amt
         hash = None if hash == 'default' else hash
         keyNameList = None if keyNameList == 'default' else keyNameList
         amt = None if amt == 'ask' else int(amt)
 
         # Call generate_keys with the parsed parameters
-        self.generate_keys(outputM=output, hashM=hash, amtM=amt, keyNameListM=keyNameList)
+        self.generate_keys(outputM=output, hashM=hash, amtM=amt, keyNameListM=key_name_list)
 
-# Example usage
+
 if __name__ == "__main__":
     key_manager = KeyManager()
     key_manager.gen()

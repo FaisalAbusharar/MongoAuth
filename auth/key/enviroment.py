@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv('../')
+load_dotenv()
 
 MongoURI = os.getenv('MONGO_CLIENT_SECRET_URL') #This is the URI to connect to your database, mongoDB should give you this link.
 MongoDatabase = os.getenv('MONGO_DATABASE_NAME') #The name of the Cluster/Database with the collections you want to access

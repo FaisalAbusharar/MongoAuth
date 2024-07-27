@@ -12,7 +12,7 @@ def main():
 
     # Generating keys with custom parameters
     print("\nGenerating keys with custom parameters...")
-    key_manager.gen(hash="CUSTOM_HASH", keyNameList="program-serial-keys", amt=5)
+    key_manager.gen(hash="CUSTOM_HASH", key_name_list="CustomKeyList", amt=5)
 
     # Example usage of KeyRetriever to retrieve random keys
     print("\n=== Key Retriever ===")
