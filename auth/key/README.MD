@@ -17,7 +17,8 @@ The function you will mainly use is `authkey()`, here is a full example usage:
         user_ip=None, user_hostname=None
     )
 ```
-It's HEAVILY recommended to provide an IP and/or Hostname, if it's not provided, it will grab the local IP and Hostname which may cause issues, you can provide these variables with the `user_ip` and `user_hostname` arguments.
+It's HEAVILY recommended to provide an IP and/or Hostname, if it's not provided, it will grab the local IP and Hostname which may cause issues.
+you can provide these variables with the `user_ip` and `user_hostname` arguments.
 You will receieve warnings based on the settings you choose, of course these can be disabled with `output=false`
 Users can be authenticated/stored into the database with either IPs, Hostnames, or both.
 You can disable the IP or Hostname authentication with `auth_user_with_ip` or `auth_user_with_hostname`.
